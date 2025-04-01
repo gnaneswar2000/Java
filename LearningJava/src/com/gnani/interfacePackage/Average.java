@@ -19,11 +19,6 @@ public class Average implements MathOperations, ScientificOperations {
 		return a*b;
 	}
 
-	@Override
-	public int sum(int a, int b) {
-		// TODO Auto-generated method stub
-		return a+b;
-	}
 
 	@Override
 	public double sine(int angle) {
