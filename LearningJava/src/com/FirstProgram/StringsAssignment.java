@@ -1,6 +1,5 @@
 package com.FirstProgram;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class StringsAssignment {
