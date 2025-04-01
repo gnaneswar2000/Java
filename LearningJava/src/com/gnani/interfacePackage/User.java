@@ -7,6 +7,8 @@ public class User {
 		Average avg = new Average();
 		
 		System.out.println(avg.mean(24, 12));
+		System.out.println(avg.tan(45));
+
 	}
 
 }
