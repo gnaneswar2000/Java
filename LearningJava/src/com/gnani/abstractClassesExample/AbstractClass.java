@@ -1,9 +1,10 @@
 package com.gnani.abstractClassesExample;
 
+import com.gnani.interfacePackage.Average;
 import com.gnani.interfacePackage.MathOperations;
 
 public abstract class AbstractClass implements House{
-	MathOperations math = new MathOperations() {
+	MathOperations math = (MathOperations) new Average() {
 		
 		@Override
 		public int subraction(int a, int b) {
