@@ -11,8 +11,18 @@ public class Employee implements Serializable{
 	
 	private int id;
 	private String name;
-	private int salary;
+	private double salary;
+	private String country;
+
 	
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
 	public Employee() {
 		
 	}
@@ -33,12 +43,12 @@ public class Employee implements Serializable{
 		this.name = name;
 	}
 
-	public int getSalary() {
+	public double getSalary() {
 		return salary;
 	}
 
-	public void setSalary(int salary) {
-		this.salary = salary;
+	public void setSalary(double d) {
+		this.salary = d;
 	}
 	
 }
