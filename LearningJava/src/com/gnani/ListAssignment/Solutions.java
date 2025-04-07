@@ -2,8 +2,6 @@ package com.gnani.ListAssignment;
 
 import java.util.*;
 
-import com.gnani.pojoExample.Employee;
-
 public class Solutions {
 
 	/*
