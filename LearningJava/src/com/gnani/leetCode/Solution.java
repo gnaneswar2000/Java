@@ -1,6 +1,7 @@
 package com.gnani.leetCode;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 public class Solution {
 
@@ -8,9 +9,9 @@ public class Solution {
 
 		Solution s = new Solution();
 
-		int[] array1 = new int[] { 1, 2, 3, 4, 5, 6, 7 };
-		int k = 3;
-		s.rotate(array1, k);
+		int[] array1 = new int[] { 1, 2, 4 };
+		int sol = s.maxProfit(array1);
+		System.out.println(sol);
 
 	}
 
@@ -74,14 +75,47 @@ public class Solution {
 
 		int[] arr = new int[nums.length];
 		int j = 0;
-		for (int i = nums.length - k ; i < nums.length + (nums.length - k) ; i++) {
-			if (i >= nums.length) 
-				arr[j++] = nums[Math.abs(i - nums.length)]; 
+		for (int i = nums.length - k; i < nums.length + (nums.length - k); i++) {
+			if (i >= nums.length)
+				arr[j++] = nums[Math.abs(i - nums.length)];
 			else
 				arr[j++] = nums[i];
 		}
 		System.out.println(Arrays.toString(arr));
 	}
-	
+
+	public int maxProfit(int[] prices) {
+
+		HashMap<Integer, Integer> map = new HashMap<>();
+		ArrayList<Integer> arr = new ArrayList<Integer>();
+		if (prices.length == 2) {
+			if (prices[1] - prices[0] < 0)
+				return 0;
+			else
+				return prices[1] - prices[0];
+		} else {
+			for (int i = 0; i < prices.length; i++) {
+				if (i == prices.length)
+					break;
+				for (int j = i + 1; j < prices.length; j++) {
+					map.put(j, prices[j] - prices[i]);
+				}
+				int maxVal = Integer.MIN_VALUE;
+
+				for (Entry<Integer, Integer> entry : map.entrySet()) {
+					if (entry.getValue() > maxVal) {
+						maxVal = entry.getValue();
+					}
+				}
+				arr.add(maxVal);
+			}
+
+			arr.sort(Collections.reverseOrder());
+			if (arr.get(0) < 0)
+				return 0;
+			else
+				return arr.get(0);
+		}
+	}
 
 }
